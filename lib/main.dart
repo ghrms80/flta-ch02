@@ -67,23 +67,39 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget buildRecipeCard(Recipe recipe) {
-    // 1
     return Card(
+      // 1
+      elevation: 2.0,
       // 2
-      child: Column(
-        // 3
-        children: <Widget>[
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      // 3
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           // 4
-          Image(
-            image: AssetImage(
-              recipe.imageUrl,
+          children: <Widget>[
+            Image(
+              image: AssetImage(
+                recipe.imageUrl,
+              ),
             ),
-          ),
-          // 5
-          Text(
-            recipe.label,
-          ),
-        ],
+            // 5
+            const SizedBox(
+              height: 14,
+            ),
+            // 6
+            Text(
+              recipe.label,
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Palatino',
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
